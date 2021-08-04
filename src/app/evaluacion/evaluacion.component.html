@@ -1,0 +1,46 @@
+<br>
+<br>
+<br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Apellido paterno</th>
+    <th scope="col">Apellido materno</th>
+    <th scope="col">Codigo Postal</th>
+    <th scope="col">Teléfono</th>
+    <th scope="col">RFC</th>
+    <th scope="col">Estatus</th>
+    <th scope="col">Modificar</th>
+    <th scope="col">Observaciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let prospecto of generateArray(arr)">
+    <td>{{prospecto.id}}</td>
+    <td>{{prospecto.name}}</td>
+    <td>{{prospecto.apellidop}}</td>
+    <td>{{prospecto.apellidom}}</td>
+    <td>{{prospecto.codigopostal}}</td>
+    <td>{{prospecto.telefono}}</td>
+    <td>{{prospecto.rfc}}</td>
+    <div *ngIf="prospecto.estatus =='E'">
+        <td><a class="btn btn-warning"  style="background-color:orange"> <fa-icon [icon]="faExclamation"></fa-icon></a></td>
+    </div>
+    <div *ngIf="prospecto.estatus =='A'">
+        <td><a class="btn btn-success" style="background-color:green"> <fa-icon [icon]="faCheck"></fa-icon></a></td>
+    </div>
+    <div *ngIf="prospecto.estatus =='R'">
+        <td><a class="btn btn-danger" style="background-color:red"> <fa-icon [icon]="faTimes"></fa-icon></a></td>
+    </div>
+    <td><a (click)="editar(prospecto.id)" class="btn btn-info" style="background-color:blue"><fa-icon [icon]="faEdit"></fa-icon></a></td>
+    <td>{{prospecto.observacion}}</td>
+  </tr> 
+  </tbody>
+</table>
+<div class="alert alert-info" *ngIf="arr.length === 0">No hay información registrada</div>
+<br>
+<br>
+<br>
+

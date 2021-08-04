@@ -1,0 +1,29 @@
+li{ 
+    border: 1px solid rgb(254, 254, 255);
+    background-color:#a1c4d1;
+    color: lightblue;
+} /* CSS link color (red) */
+a{
+    color:rgb(128, 206, 248);
+}
+a:hover{
+    color:white;
+}
+li:hover { 
+    color: rgb(24, 23, 23);
+}
+
+a {   
+    color: rgb(3, 3, 3);   
+}
+
+/* a:active {
+    background-color: white;
+} */
+
+#footer {
+    position: fixed;
+    bottom: 3px;
+    width: 100%;
+    justify-content : center;
+  }
